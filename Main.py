@@ -1,10 +1,17 @@
 # Essential
 import pygame
-import os  # Only essential if assets are used
+import os
 
 # Very useful
 import math
 import random
+
+# Setup
+pygame.init()
+pygame.mixer.init()
+pygame.font.init()
+pygame.display.set_caption("ExampleName")
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
 # Colors
 BLACK = 0, 0, 0
@@ -30,30 +37,10 @@ WIDTH, HEIGHT = 800, 800  # Resolution of screen
 FPS = 60  # How many times the game should update per second
 
 # Variables
-player = pygame.Rect((0, 0), (32, 32))  # Example
 
 # Loads assets (remove triple apostrophes to use)
-'''SPRITE_NAME = pygame.image.load(os.path.join("assets_folder", "filename"))  # Loads image from a folder
-SPRITE_NAME = pygame.transform.scale(sprite_name, (32, 32))  # Makes image size in pixels as desired (32, 32)
-MOVEMENT_SOUND = pygame.mixer.Sound(os.path.join("assets_folder", "filename"))  # Loads sound from a folder
-'''
 
-# Setup
-pygame.init()  # Initializes pygame
-pygame.mixer.init()  # Initializes pygame's sound system
-pygame.font.init()  # Initializes pygame's fonts
-pygame.display.set_caption("ExampleName")  # The title of the game window
-screen = pygame.display.set_mode((WIDTH, HEIGHT))  # Makes game window
-FONT = pygame.font.SysFont("Comic Sans MS", 32)  # Font name, font size. Taken from pygame
-
-# Example Functions
-def move_player():
-    player.x += 1
-    player.y += 1
-
-
-def draw_player():
-    pygame.draw.rect(screen, RED, player)
+# Functions
 
 
 # Main loop
@@ -66,24 +53,16 @@ def main():
     while run:
         # Gets input
         for event in pygame.event.get():
-            # Closes game when told to
             if event.type == pygame.QUIT:
                 run = False
 
         # Game logic
-        move_player()  # Example
 
-        # Clear screen
-        screen.fill(WHITE)  # Replace WHITE with desired background color
-
-        # Draw things to screen
-        draw_player()  # Example
-
-        # Updates screen and runs at set FPS
+        # Updates screen
         pygame.display.update()
         clock.tick(FPS)
 
-    pygame.quit()  # Quits game when loop is stopped
+    pygame.quit() 
 
 
-main()  # Starts game
+main()
