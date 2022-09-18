@@ -6,13 +6,6 @@ import os
 import math
 import random
 
-# Setup
-pygame.init()
-pygame.mixer.init()
-pygame.font.init()
-pygame.display.set_caption("ExampleName")
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-
 # Colors
 BLACK = 0, 0, 0
 WHITE = 255, 255, 255
@@ -38,7 +31,14 @@ FPS = 60  # How many times the game should update per second
 
 # Variables
 
-# Loads assets (remove triple apostrophes to use)
+# Setup
+pygame.init()
+pygame.mixer.init()
+pygame.font.init()
+pygame.display.set_caption("ExampleName")
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
+# Loads assets
 
 # Functions
 
@@ -62,7 +62,7 @@ def main():
         pygame.display.update()
         clock.tick(FPS)
 
-    pygame.quit() 
+    pygame.quit()
 
 
 main()
