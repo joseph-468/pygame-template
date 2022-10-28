@@ -3,6 +3,7 @@ import pygame
 # CONSTANTS
 WIDTH, HEIGHT = 800, 800
 FPS = 60
+WHITE = (255, 255, 255)
 
 
 # Main
@@ -17,8 +18,6 @@ def main():
 
     # Variables
 
-    # Load assets
-
     # Game loop
     while True:
         # Gets input
@@ -27,6 +26,7 @@ def main():
                 pygame.quit()
 
         # Updates screen
+        screen.fill(WHITE)
         pygame.display.update()
         clock.tick(FPS)
 
