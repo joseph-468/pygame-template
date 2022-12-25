@@ -1,2 +1,2 @@
-### Simple Pygame Template
+## Simple Pygame Template
 That's it :)
